@@ -1,0 +1,16 @@
+project: keyfactor-cagent
+target: keyfactor-cagent
+image: ghcr.io/xansec/keyfactor-cagent:latest 
+
+advanced_triage: false
+
+cmds:
+
+  - cmd: /workspace/Keyfactor-CAgent/agent -c /home/keyfactor/Keyfactor-CAgent/config.json
+    env: {}
+    network:
+      url: tcp://localhost:80  # protocol, host and port to analyze
+      client: True           # target is a client-side program
+      timeout: 2.0               # max seconds for sending data
+
+
