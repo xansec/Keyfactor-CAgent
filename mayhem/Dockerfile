@@ -13,6 +13,7 @@ RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y libcurl4-gnut
 COPY --from=builder /workspace /workspace
 RUN mkdir -p /home/keyfactor/Keyfactor-CAgent/certs/
 COPY ./mayhem/config.json /home/keyfactor/Keyfactor-CAgent/
+RUN chmod 777 /home/keyfactor/Keyfactor-CAgent/config.json
 COPY ./mayhem/trust.store /home/keyfactor/Keyfactor-CAgent/certs/
 WORKDIR /home/keyfactor/Keyfactor-CAgent
 
