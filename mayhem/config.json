@@ -1,0 +1,17 @@
+{
+	"AgentId": "",
+	"AgentName": "Unknown",
+	"Hostname": "localhost",
+	"Username": "testdrive\\yourusername",
+	"Password": "yourpassword",
+	"VirtualDirectory": "KeyfactorAgents",
+	"TrustStore": "/home/keyfactor/Keyfactor-CAgent/certs/trust.store",
+	"AgentCert": "/home/keyfactor/Keyfactor-CAgent/certs/Agent-cert.pem",
+	"AgentKey": "/home/keyfactor/Keyfactor-CAgent/certs/Agent-key.pem",
+	"CSRKeyType": "ECC",
+	"CSRKeySize": 256,
+	"CSRSubject": "CN=Unknown",
+	"EnrollOnStartup": true,
+	"UseSsl": false,
+	"LogFile": "/dev/null"
+}
