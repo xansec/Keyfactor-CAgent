@@ -5,7 +5,7 @@ RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y build-essenti
 COPY . /workspace/Keyfactor-CAgent
 WORKDIR /workspace/Keyfactor-CAgent
 RUN make clean
-RUN make opentest -j8
+RUN make opentest -j8 DEBUG_FLAGS=-g
 
 FROM ubuntu
 
@@ -17,4 +17,4 @@ RUN chmod 777 /home/keyfactor/Keyfactor-CAgent/config.json
 COPY ./mayhem/trust.store /home/keyfactor/Keyfactor-CAgent/certs/
 WORKDIR /home/keyfactor/Keyfactor-CAgent
 
-ENTRYPOINT ["/workspace/Keyfactor-CAgent/agent", "-c", "/home/keyfactor/Keyfactor-CAgent/certs/config.json"]
+ENTRYPOINT ["/workspace/Keyfactor-CAgent/agent", "-c", "/home/keyfactor/Keyfactor-CAgent/config.json"]
