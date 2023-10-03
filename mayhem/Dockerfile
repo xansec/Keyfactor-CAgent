@@ -5,7 +5,7 @@ RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y build-essenti
 COPY . /workspace/Keyfactor-CAgent
 WORKDIR /workspace/Keyfactor-CAgent
 RUN make clean
-RUN make opentest -j8 DEBUG_FLAGS=-g
+RUN make opentest -j8 DEBUG_FLAGS=-gdwarf-4
 
 FROM ubuntu
 
