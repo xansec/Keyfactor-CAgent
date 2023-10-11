@@ -2,6 +2,12 @@ project: keyfactor-cagent
 target: keyfactor-cagent
 image: ghcr.io/xansec/keyfactor-cagent:latest 
 
+tasks:
+  - name: exploitability_factors
+  - name: behavior_testing
+  - name: regression_testing
+  - name: coverage_analysis
+
 advanced_triage: false
 
 cmds:
